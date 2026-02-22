@@ -1,83 +1,78 @@
-## Welcome To ( সহজ সরল সিম্পল ) Assignment - 4 
 
 
----
-# 📅 Deadline For 60 marks: 23th February, 2026 (11:59 pm ⏱️)
-# 📅 Deadline For 50 marks: 24th February, 2026 (11:59 pm ⏱️)
-# 📅 Deadline For 30 marks: Any time after 24th February.
-
-
-# Main Requirements
-
-## Design Part
-
-## Dashboard
-- Website name and Create a dashboard like figma 
-- The section should be responsive for mobile devices. It is totally up to you. 
-
-## Available Jobs Section
-- A title on the left side, jobs count on the right side 
-- 3 different tab  below the section title 
-- Minimum 8 cards with:
-	- companyName
-	- position
-	- location
-	- type
-	- salary
-	- description
-	- 2 buttons: Interview, Rejected
-- By default all the jobs data will show on All tab, and the Interview, Rejected tab will show “No jobs Available” message with a subtitle below and an icon/image on the above
-
-- The section should be responsive for mobile devices. It is totally up to you.
-
---- 
-
-## Functionalities Part
-- Clicking on Interview button on the card 
-    - will add the data on Interview tab 
-    - add the status as Interview.
-    - Will increase the the count of interview in Dashboard 
-
-- Clicking on Rejected button on the card 
-    - will add the data on Rejected tab 
-    - add the status as Rejected.
-    - Will increase the the count of Rejected in Dashboard
-
-- Enable toggle between Interview and rejected button(you can select Rejected button after clicking on Interview, and Interview button after clicking on Rejected button). It will change the tab and dashboard count also. It will show tab wise jobs count on the right.
-
----
-
-# Challenges Requirements
-- Clicking on the delete button will remove that card from the UI, and the count will be deducted from the dashboard card and the main section.
-- No lorem ipsum text on your website. At least 8 meaningful commits in your project.  
-
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
+***I Solved it with the help of chatGPT***
 
 
 ## Answers to Questions
 
 ### 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+ANS: 
+GetElementById("id")
+* শুধু একটি Elment দেয়।
+*id deya koje.
+*shob se fast.
+
+GetElementsByClassName,("class")
+*aky class ar anek golo element dey.
+*htmlCollection ritan kore
+
+QuerySelectorAll('selector'),
+
+*css selector use kore.
+*shob matching element dey (NodeList).
+
+<!-- shotcut -->
+Id -> aktay -> GetElementByid.
+class -> onek -> getElementByClassName.
+Flexible selector -> querySelector/querySelectorAll.
+
 
 ### 2. How do you create and insert a new element into the DOM?
 
+ANS :
+1.element.
+2.content.
+3.DOM.
+
 ### 3. What is Event Bubbling? And how does it work?
+
+ANS:
+যখন কোনো element এ event ঘটে, তখন event ভিতরের element থেকে parent এর দিকে উপরে ওঠে — এটাকে Event Bubbling বলে |
+
+উদাহরণ:
+button a click korle event sholbe.
+
+button -> div -> body -> document
 
 ### 4. What is Event Delegation in JavaScript? Why is it useful?
 
+ANS:
+parent element এ event listener বসিয়ে child এর event ধরাকে Event Delegation বলে।
+
+উদাহরণ:
+document.getElementById("list").addEventListener("click", function(e) {
+  if (e.target.tagName === "LI") {
+    console.log("LI clicked");
+  }
+}
+
+useful:
+* কম memory লাগে ।
+* dynamic element এ কাজ করে ।
+* code clean থাকে ।
+* performance ভালো ।
+
 ### 5. What is the difference between preventDefault() and stopPropagation() methods?
 
----
+ANS :
+preventDefault() vs
+stopPropagation() difference
 
+ preventDefault() 
+ *browser ar defult kaj bondo kore.
 
-**Technology Stack:**
-- HTML
-- CSS (Vanilla/Tailwind/DaisyUI)
-- JavaScript (Vanilla)
+ stopPropagation(),
+ event bubbling bondo kore.
 
-
---- 
-
-## What to submit: 
-
-1. GitHub Repository Link: 
-2. Live Site Link: 
+ *preventDefault -> default kaj bondo.
+ *preventDefault -> event উপরে যাওয়া bondo.

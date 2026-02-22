@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+
+<!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Awesome cdn -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stoke:wght@300;400&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body class="bg-green-100">
+    <header class="w-[80%] mx-auto">
+        <h1 class="text-2xl font-bold mt-7">Job Application Tracker</h1>
+        <div class="grid grid-cols-3 gap-4 mt-3">
+            <div class="bg-white p-3 rounded-2xl">
+                <h4>Total</h4>
+                <p id="total" class="">0</p>
+            </div>
+
+            <div class="bg-white p-3 rounded-2xl">
+                <h4>Interview</h4>
+                <p id="interview" class="text-green-500"">0</p>
+            </div>
+
+            <div class="bg-white p-3 rounded-2xl">
+                <h4>Rejected</h4>
+                <p id="rejected" class="text-red-500">0</p>
+            </div>
+        </div>
+    </header>
+
+<hr class="my-10 text-blue-300">
+
+    <main class="w-[80%] mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Available Jobs</h1>
+        <div class="mb-6">
+            <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" class="bg-blue-300 px-8 py-1 text-white rounded-xl cursor-pointer ">All</button>
+            <button onclick="toggleStyle('interview-filter-btn')" id="interview-filter-btn" class="bg-gray-300 px-5 py-1 text-white rounded-xl cursor-pointer hover:">Interview</button>
+            <button onclick="toggleStyle('rejected-filter-btn')" id="rejected-filter-btn" class="bg-gray-300 px-5 py-1 text-white rounded-xl cursor-pointer hover:">Rejected</button>
+        </div>
+
+        <section id="allcards" class="space-y-4">
+            <div class="flex justify-between p-6 bg-white  job-card">
+                <div class="space-y-4">
+                <h2 class="mobile text-xl">Mobile First Corp</h2>
+                <p class="react">React Native Developer</p>
+                <p class="remote">Remote • Full-time • $130,000 - $175,000</p>
+
+                <button class="status border px-3 py-1">Not Applied</button>
+                <p class="build">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                <div class="flex gap-3">
+                    <button id="interview-btn" class="interview-btn text-green-500 border border-1px-sold-green py-2 px-4 rounded-xl cursor-pointer">interview</button>
+                    <button id="rejected-btn" class="rejected-btn text-red-500 border border-1px-sold-red py-2 px-4 rounded-xl cursor-pointer">Rejected</button>
+                </div>
+               </div>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+            </div>
+
+            <div class="flex justify-between p-6 bg-white job-card">
+                <div class="space-y-4">
+                <h2 class="mobile text-xl">WebFlow Agency</h2>
+                <p class="react">Web Designer & Developer</p>
+                <p class="remote">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+
+                <button class="status border px-3 py-1">Not Applied</button>
+                <p class="build">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                <div class="flex gap-3">
+                     <button id="interview-btn" class="interview-btn text-green-500 border border-1px-sold-green py-2 px-4 rounded-xl cursor-pointer">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn text-red-500 border border-1px-sold-red py-2 px-4 rounded-xl cursor-pointer">Rejected</button>
+                </div>
+            </div>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+            </div>
+
+            <div class="flex justify-between p-6 bg-white job-card">
+                <div class="space-y-4">
+                <h2 class="mobile text-xl">DataViz Solutions</h2>
+                <p class="react">Data Visualization Specialist</p>
+                <p class="remote">Boston, MA • Full-time • $125,000 - $165,000</p>
+
+                <button class="status border px-4 py-2">Not Applied</button>
+                <p class="build">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+                <div class="flex gap-3">
+                    <button id="interview-btn" class="interview-btn text-green-500 border border-1px-sold-green py-2 px-4 rounded-xl cursor-pointer">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn text-red-500 border border-1px-sold-red py-2 px-4 rounded-xl cursor-pointer">Rejected</button>
+                </div>
+            </div>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+            </div>
+
+            <div class="flex justify-between p-6 bg-white job-card">
+                <div class="space-y-4">
+                <h2 class="mobile text-xl">CloudFirst Inc</h2>
+                <p class="react">Backend Developer</p>
+                <p class="remote">Seattle, WA • Full-time • $140,000 - $190,000</p>
+
+                <button class="status border px-4 py-2">Not Applied</button>
+                <p class="build">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                <div class="flex gap-3">
+                    <button id="interview-btn" class="interview-btn text-green-500 border border-1px-sold-green py-2 px-4 rounded-xl cursor-pointer">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn text-red-500 border border-1px-sold-red py-2 px-4 rounded-xl cursor-pointer">Rejected</button>
+                </div>
+            </div>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            
+            <div class="flex justify-between p-6 bg-white job-card">
+                <div class="space-y-4">
+                <h2 class="mobile text-xl">Innovation Labs</h2>
+                <p class="react">UI/UX Engineer</p>
+                <p class="remote">Austin, TX • Full-time • $110,000 - $150,000</p>
+
+                <button class="status border px-4 py-2">Not Applied</button>
+                <p class="build">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+                <div class="flex gap-3">
+                    <button id="interview-btn" class="interview-btn text-green-500 border border-1px-sold-green py-2 px-4 rounded-xl cursor-pointer">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn text-red-500 border border-1px-sold-red py-2 px-4 rounded-xl cursor-pointer">Rejected</button>
+                </div>
+            </div>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+            </div>
+
+            <div class="flex justify-between p-6 bg-white job-card">
+                <div class="space-y-4">
+                <h2 class="mobile text-xl">MegaCorp Solutions</h2>
+                <p class="react">JavaScript Developer</p>
+                <p class="remote">New York, NY • Full-time • $130,000 - $170,00</p>
+
+                <button class="status border px-4 py-2">Not Applied</button>
+                <p class="build">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+                <div class="flex gap-3">
+                    <button id="interview-btn" class="interview-btn text-green-500 border border-1px-sold-green py-2 px-4 rounded-xl cursor-pointer">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn text-red-500 border border-1px-sold-red py-2 px-4 rounded-xl cursor-pointer">Rejected</button>
+                </div>
+            </div>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+            </div>
+
+            <div class="flex justify-between p-6 bg-white job-card">
+                <div class="space-y-4">
+                <h2 class="mobile text-xl">StartupXYZ</h2>
+                <p class="react">Full Stack Engineer</p>
+                <p class="remote">Remote • Full-time • $120,000 - $160,000</p>
+
+                <button class="status border px-4 py-2">Not Applied</button>
+                <p class="build">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+                <div class="flex gap-3">
+                    <button id="interview-btn" class="interview-btn text-green-500 border border-1px-sold-green py-2 px-4 rounded-xl cursor-pointer">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn text-red-500 border border-1px-sold-red py-2 px-4 rounded-xl cursor-pointer">Rejected</button>
+                </div>
+            </div>
+            <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+            </div>
+
+            <div class="flex justify-between p-6 bg-white job-card">
+                <div class="space-y-4">
+                <h2 class="mobile text-xl">TechCorp Industries</h2>
+                <p class="react">Senior Frontend Developer</p>
+                <p class="remote">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+
+                <button class="status border px-4 py-2">Not Applied</button>
+                <p class="build">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+                <div class="flex gap-3">
+                    <button id="interview-btn" class="interview-btn text-green-500 border border-1px-sold-green py-2 px-4 rounded-xl cursor-pointer">Interview</button>
+                    <button id="rejected-btn" class="rejected-btn text-red-500 border border-1px-sold-red py-2 px-4 rounded-xl cursor-pointer">Rejected</button>
+                </div>
+            </div>
+            <button class="delete-btn lg:my-10"><i class="fa-solid fa-trash"></i></button>
+            </div>
+
+        </section>
+
+         <section id="filtered-section" class="hidden space-y-6">
+            
+        </section>
+
+       <section id="jobs-container" class="flex flex-col items-center justify-center py-10">
+
+        <img id="no-jobs-img" class="w-64 lg:w-50%" src="./jobs.png" alt="No jobs available">
+        <p id="no-jobs-text" class="text-gray-500 mt-4">No jobs available</p>
+
+       </section>
+
+         
+    </main>
+
+   
+
+    <script src="/script/allcard.js"></script>
+</body>
+</html>
